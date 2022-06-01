@@ -49,7 +49,7 @@ app.use((req:any, res:any, next: any)=>{
 })
 
 app.use(cors({
-    origin: ['https://shamimreza2292.github.io/easyStepCV', 'http://localhost:4200'],
+    origin: ['https://shamimreza2292.github.io', 'http://localhost:4200'],
     optionsSuccessStatus: 200 
 })); 
 
