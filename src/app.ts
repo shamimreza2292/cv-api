@@ -17,10 +17,11 @@ import session from 'express-session';
 import connectMongodbSession from 'connect-mongodb-session';
 
 import {loginControler} from './controler/auth.controler';
+import { nextTick } from 'process';
 
 // const session = require('express-session');
 
-
+const cors = require('cors')
 
 const app = express();
 const cookieParser = require('cookie-parser');
@@ -47,11 +48,10 @@ app.use((req:any, res:any, next: any)=>{
   next();   
 })
 
-app.use((req:any, res:any, next:any) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  }); 
+app.use(cors({
+    origin: ['https://shamimreza2292.github.io/easyStepCV', 'http://localhost:4200'],
+    optionsSuccessStatus: 200 
+})); 
 
 app.use(session({
     secret: 'cv session',
