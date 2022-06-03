@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/app.js",
     "dev": "nodemon src/app.ts",
-    "build": "tsc -p .",
-    "heroku-postbuild": "ng build --prod" 
+    "build": "tsc -p"
   },
   "author": "shamim reza",
   "license": "ISC",
