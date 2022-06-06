@@ -74,10 +74,10 @@ app.use('/api', routes);
 // ONU8Lh2p439Mq72e
 
  mongoose.connect('mongodb+srv://max:ONU8Lh2p439Mq72e@cluster0.xxcpo.mongodb.net/easyStepResume?retryWrites=true&w=majority', {
-    useNewUrlParser: true ,
-    useUnifiedTopology: true ,
-    useFindAndModify: false,
-    useCreateIndex: true
+    // useNewUrlParser: true ,
+    // useUnifiedTopology: true ,
+    // useFindAndModify: false,
+    // useCreateIndex: true
 }).then((db)=>{
 
     // db.createConnection('easyStepResume').then((colection)=>{
