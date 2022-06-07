@@ -21,52 +21,52 @@ import { nextTick } from 'process';
 
 // const session = require('express-session');
 
-const cors = require('cors')
+// const cors = require('cors')
 
 const app = express();
-const cookieParser = require('cookie-parser');
-app.use(cookieParser());
+// const cookieParser = require('cookie-parser');
+// app.use(cookieParser());
 
 
-const routes = require('./router/routes');
+// const routes = require('./router/routes');
 // const bodyParser = require('body-parser');
 
 
 const port = process.env["PORT"] || 4000;
 
-const connectMongoSessionStor = connectMongodbSession(session)
-const sessionStore = new connectMongoSessionStor({
-    uri: 'mongodb+srv://max:ONU8Lh2p439Mq72e@cluster0.xxcpo.mongodb.net/myJobCarrier',
-    collection: 'sessionstore'  
-})
+// const connectMongoSessionStor = connectMongodbSession(session)
+// const sessionStore = new connectMongoSessionStor({
+//     uri: 'mongodb+srv://max:ONU8Lh2p439Mq72e@cluster0.xxcpo.mongodb.net/myJobCarrier',
+//     collection: 'sessionstore'  
+// })
 // const session =  SessionOptions;
 
-app.use(express.json());
+// app.use(express.json());
 
-app.use((req:any, res:any, next: any)=>{
-    req.userId = loginControler.userId;
-  next();   
-})
+// app.use((req:any, res:any, next: any)=>{
+//     req.userId = loginControler.userId;
+//   next();   
+// })
 
-app.use(cors({
-    origin: ['https://shamimreza2292.github.io', 'http://localhost:4200', 'https://cvbackendapi.herokuapp.com'],
-    optionsSuccessStatus: 200 
-})); 
+// app.use(cors({
+//     origin: ['https://shamimreza2292.github.io', 'http://localhost:4200', 'https://cvbackendapi.herokuapp.com'],
+//     optionsSuccessStatus: 200 
+// })); 
 
-app.use(session({
-    secret: 'cv session',
-    resave: false,
-    saveUninitialized: false,
-    cookie: { secure: true },
-    store: sessionStore
-}));
-
-
+// app.use(session({
+//     secret: 'cv session',
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: { secure: true },
+//     store: sessionStore
+// }));
 
 
 
 
-app.use('/api', routes);
+
+
+// app.use('/api', routes);
 
 
 
@@ -92,7 +92,9 @@ app.use('/api', routes);
 //     console.log(err);
 // });
 
-
+app.use((req: any, res: any, next: any)=>{
+    res.json({message: "successfully run."})
+})
 
 app.listen(port, ()=>{
     console.log(`server use port ${port}`);
