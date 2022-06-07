@@ -1,72 +1,50 @@
 import express from 'express';
-// import bodyParser from 'body-parser';
- 
-// import { Router } from './router/routes'; // need to declear class and export it 
-
-// const express = require('express');
- 
-// const mongoose = require('mongoose'); 
-
-import mongoose from 'mongoose';
-
-// import session from 'express-session';
-
-// import { Session, SessionOptions } from 'express-session';
 import session from 'express-session';
-
 import connectMongodbSession from 'connect-mongodb-session';
-
 import {loginControler} from './controler/auth.controler';
-import { nextTick } from 'process';
-
-// const session = require('express-session');
-
 // const cors = require('cors')
 
 const app = express();
-// const cookieParser = require('cookie-parser');
-// app.use(cookieParser());
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
 
 
-// const routes = require('./router/routes');
-// const bodyParser = require('body-parser');
-
+const routes = require('./router/routes');
 
 const port = process.env["PORT"] || 4000;
 
-// const connectMongoSessionStor = connectMongodbSession(session)
-// const sessionStore = new connectMongoSessionStor({
-//     uri: 'mongodb+srv://max:ONU8Lh2p439Mq72e@cluster0.xxcpo.mongodb.net/myJobCarrier',
-//     collection: 'sessionstore'  
-// })
-// const session =  SessionOptions;
+const connectMongoSessionStor = connectMongodbSession(session)
+const sessionStore = new connectMongoSessionStor({
+    uri: 'mongodb+srv://max:ONU8Lh2p439Mq72e@cluster0.xxcpo.mongodb.net/myJobCarrier',
+    collection: 'sessionstore'  
+})
 
-// app.use(express.json());
+app.use(express.json());
 
-// app.use((req:any, res:any, next: any)=>{
-//     req.userId = loginControler.userId;
-//   next();   
-// })
+app.use((req:any, res:any, next: any)=>{
+    req.userId = loginControler.userId;
+  next();   
+})
 
 // app.use(cors({
 //     origin: ['https://shamimreza2292.github.io', 'http://localhost:4200', 'https://cvbackendapi.herokuapp.com'],
 //     optionsSuccessStatus: 200 
 // })); 
 
-// app.use(session({
-//     secret: 'cv session',
-//     resave: false,
-//     saveUninitialized: false,
-//     cookie: { secure: true },
-//     store: sessionStore
-// }));
+app.use(session({
+    secret: 'cv session',
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: true },
+    store: sessionStore
+}));
 
 
 
 
 
 
-// app.use('/api', routes);
+app.use('/api', routes);
 
 
 
@@ -74,11 +52,11 @@ const port = process.env["PORT"] || 4000;
 // ONU8Lh2p439Mq72e
 
 //  mongoose.connect('mongodb+srv://max:ONU8Lh2p439Mq72e@cluster0.xxcpo.mongodb.net/easyStepResume?retryWrites=true&w=majority', {
-//     // useNewUrlParser: true ,
-//     // useUnifiedTopology: true ,
-//     // useFindAndModify: false,
-//     // useCreateIndex: true
-// }).then((db: any)=>{
+//     useNewUrlParser: true ,
+//     useUnifiedTopology: true ,
+//     useFindAndModify: false,
+//     useCreateIndex: true
+// }).then((db)=>{
 
 //     // db.createConnection('easyStepResume').then((colection)=>{
 
@@ -91,6 +69,12 @@ const port = process.env["PORT"] || 4000;
 //     console.log('mongodb conection error');
 //     console.log(err);
 // });
+
+
+
+
+
+
 
 app.use((req: any, res: any, next: any)=>{
     res.json({message: "successfully run."})
