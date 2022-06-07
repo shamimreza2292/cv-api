@@ -73,21 +73,27 @@ app.use('/api', routes);
 
 // ONU8Lh2p439Mq72e
 
- mongoose.connect('mongodb+srv://max:ONU8Lh2p439Mq72e@cluster0.xxcpo.mongodb.net/easyStepResume?retryWrites=true&w=majority', {
-    // useNewUrlParser: true ,
-    // useUnifiedTopology: true ,
-    // useFindAndModify: false,
-    // useCreateIndex: true
-}).then((db)=>{
+//  mongoose.connect('mongodb+srv://max:ONU8Lh2p439Mq72e@cluster0.xxcpo.mongodb.net/easyStepResume?retryWrites=true&w=majority', {
+//     // useNewUrlParser: true ,
+//     // useUnifiedTopology: true ,
+//     // useFindAndModify: false,
+//     // useCreateIndex: true
+// }).then((db: any)=>{
 
-    // db.createConnection('easyStepResume').then((colection)=>{
+//     // db.createConnection('easyStepResume').then((colection)=>{
 
-    // })
-    app.listen(port, ()=>{
-        console.log(`server use port ${port}`);
-    });
+//     // })
+//     app.listen(port, ()=>{
+//         console.log(`server use port ${port}`);
+//     });
     
-}).catch((err: any)=>{
-    console.log('mongodb conection error');
-    console.log(err);
+// }).catch((err: any)=>{
+//     console.log('mongodb conection error');
+//     console.log(err);
+// });
+
+
+
+app.listen(port, ()=>{
+    console.log(`server use port ${port}`);
 });
