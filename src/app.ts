@@ -47,7 +47,7 @@ app.use((req:any, res:any, next: any)=>{
 
 
 
-app.use('/api', routes);
+// app.use('/api', routes);
 
 
 
