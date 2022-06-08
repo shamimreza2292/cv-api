@@ -5,7 +5,7 @@ import {loginControler} from './controler/auth.controler';
 // const cors = require('cors')
 
 const app = express();
-// const cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 // app.use(cookieParser());
 
 
