@@ -9,7 +9,7 @@ const app = express();
 // app.use(cookieParser());
 
 
-const routes = require('./router/routes');
+// const routes = require('./router/routes');
 
 const port = process.env["PORT"] || 4000;
 
