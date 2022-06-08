@@ -30,10 +30,10 @@ const port = process.env["PORT"] || 4000;
 
 app.use(express.json());
 
-app.use((req:any, res:any, next: any)=>{
-    req.userId = loginControler.userId;
-  next();   
-})
+// app.use((req:any, res:any, next: any)=>{
+//     req.userId = loginControler.userId;
+//   next();   
+// })
 
 // app.use(cors({
 //     origin: ['https://shamimreza2292.github.io', 'http://localhost:4200', 'https://cvbackendapi.herokuapp.com'],
