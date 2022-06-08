@@ -13,11 +13,20 @@ const routes = require('./router/routes');
 
 const port = process.env["PORT"] || 4000;
 
-const connectMongoSessionStor = connectMongodbSession(session)
-const sessionStore = new connectMongoSessionStor({
-    uri: 'mongodb+srv://max:ONU8Lh2p439Mq72e@cluster0.xxcpo.mongodb.net/myJobCarrier',
-    collection: 'sessionstore'  
-})
+// const connectMongoSessionStor = connectMongodbSession(session)
+// const sessionStore = new connectMongoSessionStor({
+//     uri: 'mongodb+srv://max:ONU8Lh2p439Mq72e@cluster0.xxcpo.mongodb.net/myJobCarrier',
+//     collection: 'sessionstore'  
+// })
+
+// app.use(session({
+//     secret: 'cv session',
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: { secure: true },
+//     store: sessionStore
+// }));
+
 
 app.use(express.json());
 
@@ -31,13 +40,7 @@ app.use((req:any, res:any, next: any)=>{
 //     optionsSuccessStatus: 200 
 // })); 
 
-app.use(session({
-    secret: 'cv session',
-    resave: false,
-    saveUninitialized: false,
-    cookie: { secure: true },
-    store: sessionStore
-}));
+
 
 
 
