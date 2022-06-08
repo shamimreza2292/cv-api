@@ -9,7 +9,8 @@ const cookieParser = require('cookie-parser');
 // app.use(cookieParser());
 
 
-const routes = require('router/routes');
+// const routes = require('router/routes');
+import {router} from "./router/routes";
 
 const port = process.env["PORT"] || 4000;
 
@@ -47,7 +48,7 @@ app.use(express.json());
 
 
 
-// app.use('/api', routes);
+app.use('/api', router);
 
 
 

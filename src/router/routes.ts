@@ -4,7 +4,7 @@
 
 import express from 'express'
 
-const router = express.Router();
+export const router = express.Router();
 // const personalData = require('../controler/personal.info.controler');
 // const workingExperienceControler = require('../controler/workingExperience.controler');
 // const skilControler = require('../controler/skil.controler');
@@ -44,7 +44,7 @@ router.post('/refresToken', loginControler.refreshToken);
 router.get('/logout', loginControler.logout);
 
 
-module.exports = router;
+// module.exports = router;
 
 
 
