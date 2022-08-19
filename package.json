@@ -6,9 +6,9 @@
   "scripts": {
     "start": "node dist/app.js",
     "postinstall": "tsc",
-    "watch-node": "nodemon src/app.ts",
-    "watch-ts": "tsc -w",
-    "deploy": "git add . && git commit -m Heroku && git push heroku master"
+    "dev": "nodemon src/app.ts"
+    
+     
   },
   "author": "shamim reza",
   "license": "ISC",
