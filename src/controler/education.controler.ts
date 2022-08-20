@@ -5,6 +5,12 @@ import { Request, Response, NextFunction } from 'express';
 const educationModal = require('../modal/education');
 const ObjectId = require('mongodb').ObjectID;
 
+
+export interface educationPostData {
+    
+
+}
+
 export class educationControler {
     public static educationPost(req: any, res: Response, next: NextFunction) {
         const passingYear = req.body.passingYear;

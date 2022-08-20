@@ -57,5 +57,5 @@ router.get('/logout', loginControler.logout);
 //         this.router.post('/personalInfo', PersonalInfoControler.postPersonalInfo);
 
 //         return this.router;
-//     }
+//     } 
 // }
