@@ -33,7 +33,6 @@ This section is about list of the major frameworks/libraries used to bootstrap t
 * [![Express][Express.js]][Express-url]
 * [![Redis][Redis]][Redis-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
